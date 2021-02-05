@@ -1,0 +1,11 @@
+# ninja log v5
+1	10	0	CMakeFiles/make-selftest-rw	d44e06fde162eed7
+1	11	0	CMakeFiles/copy-selftest-ro	3e88701c0f8502bb
+0	62	1612534333077497449	CMakeFiles/gdom_selftest.dir/src/gdom_selftest.c.o	8a3dfb79f6c6ab3f
+0	66	1612534333080830776	CMakeFiles/gdom_objects.dir/src/gdom_private_selftest.c.o	a9407fab103f34c1
+0	74	1612534333087497428	CMakeFiles/gdom_objects.dir/src/gdom_server.c.o	83e56e84de32f026
+74	99	1612534333114164042	libgdom.so.0.0.0	6f6937efda39a1c8
+99	109	1612534333114164042	libgdom.so.0	1e964294672bb4c1
+99	109	1612534333114164042	libgdom.so	1e964294672bb4c1
+74	124	1612534333137497329	libgdom.a	82f611995b14c8f9
+109	206	1612534333220830496	gdom_selftest	3c132148c8a3173c
