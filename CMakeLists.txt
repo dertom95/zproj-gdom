@@ -136,7 +136,7 @@ ENDIF (czmq_FOUND)
 # version
 ########################################################################
 set(GDOM_VERSION_MAJOR 0)
-set(GDOM_VERSION_MINOR 0)
+set(GDOM_VERSION_MINOR 2)
 set(GDOM_VERSION_PATCH 0)
 set(GDOM_VERSION "${GDOM_VERSION_MAJOR}.${GDOM_VERSION_MINOR}.${GDOM_VERSION_PATCH}")
 message(STATUS "Detected GDOM Version - ${GDOM_VERSION}")
@@ -147,12 +147,13 @@ message(STATUS "Detected GDOM Version - ${GDOM_VERSION}")
 ########################################################################
 set (gdom_headers
     include/gdom_library.h
-    include/global_domination.h
+    include/globaldom.h
 )
 
 IF (ENABLE_DRAFTS)
     list(APPEND gdom_headers
         include/gdom_server.h
+        include/gdom_client.h
     )
 ENDIF (ENABLE_DRAFTS)
 
@@ -171,6 +172,7 @@ set (gdom_sources
 IF (ENABLE_DRAFTS)
     list (APPEND gdom_sources
         src/gdom_server.c
+        src/gdom_client.c
     )
 ENDIF (ENABLE_DRAFTS)
 
@@ -283,7 +285,7 @@ endif()
 ########################################################################
 # pkgconfig
 ########################################################################
-set (VERSION "0.0.0")
+set (VERSION "0.2.0")
 set (prefix "${CMAKE_INSTALL_PREFIX}")
 set (exec_prefix "\${prefix}")
 set (libdir "\${prefix}/lib${LIB_SUFFIX}")
@@ -335,6 +337,32 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/gdomConfig.cmake
 # executables
 ########################################################################
 add_executable(
+    gdomd
+    "${SOURCE_DIR}/src/gdomd.c"
+)
+if (TARGET gdom)
+target_link_libraries(
+    gdomd
+    gdom
+    ${LIBZMQ_LIBRARIES}
+    ${CZMQ_LIBRARIES}
+    ${OPTIONAL_LIBRARIES}
+)
+endif()
+if (NOT TARGET gdom AND TARGET gdom-static)
+target_link_libraries(
+    gdomd
+    gdom-static
+    ${LIBZMQ_LIBRARIES}
+    ${CZMQ_LIBRARIES}
+    ${OPTIONAL_LIBRARIES}
+    ${OPTIONAL_LIBRARIES_STATIC}
+)
+endif()
+install(TARGETS gdomd
+    RUNTIME DESTINATION bin
+)
+add_executable(
     gdom_selftest
     "${SOURCE_DIR}/src/gdom_selftest.c"
 )
@@ -377,6 +405,7 @@ set(TEST_CLASSES
 IF (ENABLE_DRAFTS)
     list (APPEND TEST_CLASSES
     gdom_server
+    gdom_client
     )
 ENDIF (ENABLE_DRAFTS)
 
@@ -444,6 +473,7 @@ set(cmake_generated ${PROJECT_BINARY_DIR}/CMakeCache.txt
                     ${PROJECT_BINARY_DIR}/src/libgdom.pc
                     ${PROJECT_BINARY_DIR}/src/libgdom.so
                     ${PROJECT_BINARY_DIR}/src/global domination_selftest
+                    ${PROJECT_BINARY_DIR}/src/gdomd
                     ${PROJECT_BINARY_DIR}/src/gdom_selftest
 )
 

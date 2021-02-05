@@ -4,7 +4,7 @@
 
 FAILED=0
 IFS=";"
-FILES="../include/gdom_library.h;../include/gdom_server.h;../include/global_domination.h;../include/globaldom.h;../src/gdom_classes.h;../src/gdom_private_selftest.c;../src/gdom_selftest.c;../src/gdom_server.c"
+FILES="../include/gdom_client.h;../include/gdom_library.h;../include/gdom_server.h;../include/globaldom.h;../src/gdom_classes.h;../src/gdom_client.c;../src/gdom_private_selftest.c;../src/gdom_selftest.c;../src/gdom_server.c;../src/gdomd.c"
 IDS=$(echo -en "\n\b")
 [ -n "$MAKE" ] || MAKE=make
 for FILE in $FILES

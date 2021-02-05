@@ -3,12 +3,13 @@
 #  Read the zproject/README.md for information about making permanent changes. #
 ################################################################################
 include_HEADERS = \
-    global_domination.h \
+    globaldom.h \
     gdom_library.h
 
 if ENABLE_DRAFTS
 include_HEADERS += \
-    gdom_server.h
+    gdom_server.h \
+    gdom_client.h
 
 endif
 

@@ -13,7 +13,7 @@
 # Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.61)
 #
-AC_INIT([global domination],[0.0.0],[email@hostname.com])
+AC_INIT([global domination],[0.2.0],[email@hostname.com])
 
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_MACRO_DIR(config)
@@ -521,6 +521,16 @@ else
 fi
      AC_MSG_RESULT([$enable_dist_cmakefiles])])
 AM_CONDITIONAL(ENABLE_DIST_CMAKEFILES, test "x$enable_dist_cmakefiles" = "xyes")
+
+# Check for gdomd intent
+AC_ARG_ENABLE([gdomd],
+    AS_HELP_STRING([--enable-gdomd],
+        [Compile and install 'gdomd' [default=yes]]),
+    [enable_gdomd=$enableval],
+    [enable_gdomd=yes])
+
+AM_CONDITIONAL([ENABLE_GDOMD], [test x$enable_gdomd != xno])
+AM_COND_IF([ENABLE_GDOMD], [AC_MSG_NOTICE([ENABLE_GDOMD defined])])
 
 # Check for gdom_selftest intent
 AC_ARG_ENABLE([gdom_selftest],

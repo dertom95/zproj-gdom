@@ -1,7 +1,17 @@
 <project
     name = "Global Domination"
     script = "zproject.gsl"
-    prefix = "gdom" >
+    prefix = "gdom"
+    header = "globaldom.h" >
+
     <use project = "czmq" />
+
+    <version major = "0" minor = "2" />
+
+    <include filename = "license.xml"/>
     <class name = "gdom_server" />
+    <class name = "gdom_client" />
+    <main name = "gdomd">Global Domination Demon</main>
+
+    <target name = "travis" />
 </project>

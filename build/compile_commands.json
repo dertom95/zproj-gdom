@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build",
+  "command": "/usr/bin/gcc -DGDOM_BUILD_DRAFT_API -I../src -I../include -I. -g   -I/usr/include/pgm-5.3 -o CMakeFiles/gdomd.dir/src/gdomd.c.o -c /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdomd.c",
+  "file": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdomd.c"
+},
+{
+  "directory": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build",
   "command": "/usr/bin/gcc -DGDOM_BUILD_DRAFT_API -I../src -I../include -I. -g   -I/usr/include/pgm-5.3 -o CMakeFiles/gdom_selftest.dir/src/gdom_selftest.c.o -c /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_selftest.c",
   "file": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_selftest.c"
 },
@@ -8,6 +13,11 @@
   "directory": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build",
   "command": "/usr/bin/gcc -DGDOM_BUILD_DRAFT_API -I../src -I../include -I. -g -fPIC   -I/usr/include/pgm-5.3 -o CMakeFiles/gdom_objects.dir/src/gdom_server.c.o -c /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_server.c",
   "file": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_server.c"
+},
+{
+  "directory": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build",
+  "command": "/usr/bin/gcc -DGDOM_BUILD_DRAFT_API -I../src -I../include -I. -g -fPIC   -I/usr/include/pgm-5.3 -o CMakeFiles/gdom_objects.dir/src/gdom_client.c.o -c /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_client.c",
+  "file": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/src/gdom_client.c"
 },
 {
   "directory": "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build",

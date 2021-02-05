@@ -13,6 +13,10 @@
 # Ignore the source doc texts generated from program sources
 gdom_server.txt
 gdom_server.doc
+gdom_client.txt
+gdom_client.doc
+gdomd.txt
+gdomd.doc
 
 # Make sure to track the manually maintained project description
 !*.adoc

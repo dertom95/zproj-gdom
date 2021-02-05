@@ -61,7 +61,7 @@ set_target_properties(gdom-static PROPERTIES
 # Import target "gdom" for configuration "Debug"
 set_property(TARGET gdom APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(gdom PROPERTIES
-  IMPORTED_LOCATION_DEBUG "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/libgdom.so.0.0.0"
+  IMPORTED_LOCATION_DEBUG "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/libgdom.so.0.2.0"
   IMPORTED_SONAME_DEBUG "libgdom.so.0"
   )
 

@@ -26,10 +26,11 @@
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/make-selftest-rw.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/ContinuousSubmit.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/copy-selftest-ro.dir
+/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/gdomd.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/ContinuousConfigure.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/gdom_selftest.dir
-/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/NightlyConfigure.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/gdom-static.dir
+/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/NightlyConfigure.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/gdom.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/NightlyTest.dir
 /home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/CMakeFiles/NightlyCoverage.dir

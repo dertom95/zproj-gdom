@@ -45,14 +45,15 @@ endif()
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
     "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/include/gdom_library.h"
-    "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/include/global_domination.h"
+    "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/include/globaldom.h"
     "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/include/gdom_server.h"
+    "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/include/gdom_client.h"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0.0.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0.2.0"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0"
       )
     if(EXISTS "${file}" AND
@@ -63,11 +64,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/libgdom.so.0.0.0"
+    "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/libgdom.so.0.2.0"
     "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/libgdom.so.0"
     )
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0.0.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0.2.0"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgdom.so.0"
       )
     if(EXISTS "${file}" AND
@@ -135,6 +136,26 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/gdomConfig.cmake"
     "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/gdomConfigVersion.cmake"
     )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build/gdomd")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd"
+         OLD_RPATH "/home/ttrocha/_dev/extprojects/incubation/zmq/globdom/build:/usr/local/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/gdomd")
+    endif()
+  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

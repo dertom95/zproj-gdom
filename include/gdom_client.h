@@ -1,5 +1,5 @@
 /*  =========================================================================
-    global domination - Project
+    gdom_client - class description
 
     Copyright (c) the Contributors as noted in the AUTHORS file.
     This file is part of Global Domination. Resistance is useless.
@@ -10,12 +10,30 @@
     =========================================================================
 */
 
-#ifndef GLOBALDOM_H_H_INCLUDED
-#define GLOBALDOM_H_H_INCLUDED
+#ifndef GDOM_CLIENT_H_INCLUDED
+#define GDOM_CLIENT_H_INCLUDED
 
-//  Include the project library file
-#include "gdom_library.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-//  Add your own public definitions here, if you need them
+//  @interface
+//  Create a new gdom_client
+GDOM_EXPORT gdom_client_t *
+    gdom_client_new (void);
+
+//  Destroy the gdom_client
+GDOM_EXPORT void
+    gdom_client_destroy (gdom_client_t **self_p);
+
+//  Self test of this class
+GDOM_EXPORT void
+    gdom_client_test (bool verbose);
+
+//  @end
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
