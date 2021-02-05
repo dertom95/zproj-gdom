@@ -14,4 +14,5 @@
     <main name = "gdomd">Global Domination Demon</main>
 
     <target name = "travis" />
+    <target name = "vs2015" />
 </project>
